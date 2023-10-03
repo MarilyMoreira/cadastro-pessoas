@@ -35,7 +35,6 @@ public class Pessoa {
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 	
 	public Pessoa(UUID idCliente, @NotBlank String nomeCompleto, @NotNull LocalDate dataNascimento, Endereco endereco) {
-		this.idCliente = UUID.randomUUID();
 		this.nomeCompleto = nomeCompleto;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
