@@ -1,9 +1,10 @@
-package br.com.attornatus.cadastropessoas.pessoa.domain;
+package br.com.attornatus.cadastropessoas.pessoa	.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -23,7 +24,7 @@ public class Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", updatable = false, unique = true, nullable = false)
-	private UUID idCliente;
+	private UUID idPessoa;
 	@NotBlank
 	private String nomeCompleto;
 	@NotNull
@@ -33,11 +34,11 @@ public class Pessoa {
 	
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
-	
-	public Pessoa(UUID idCliente, @NotBlank String nomeCompleto, @NotNull LocalDate dataNascimento, Endereco endereco) {
-		this.nomeCompleto = nomeCompleto;
-		this.dataNascimento = dataNascimento;
-		this.endereco = endereco;
+
+	public Pessoa(PessoaRequest pessoaRequest) {
+		this.nomeCompleto = pessoaRequest.getNomeCompleto();
+		this.dataNascimento = pessoaRequest.getDataNascimento();
+		this.endereco = pessoaRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 }
