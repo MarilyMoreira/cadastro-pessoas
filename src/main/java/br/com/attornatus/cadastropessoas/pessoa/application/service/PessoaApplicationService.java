@@ -24,5 +24,4 @@ public class PessoaApplicationService implements PessoaService {
 				.idPessoa(pessoa.getIdPessoa())
 				.build();
 	}
-
 }
