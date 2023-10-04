@@ -1,4 +1,4 @@
-package br.com.attornatus.cadastropessoas.pessoa	.domain;
+package br.com.attornatus.cadastropessoas.pessoa.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
