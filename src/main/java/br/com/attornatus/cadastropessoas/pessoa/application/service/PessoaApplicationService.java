@@ -1,7 +1,10 @@
 package br.com.attornatus.cadastropessoas.pessoa.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.repository.PessoaRepository;
@@ -23,5 +26,12 @@ public class PessoaApplicationService implements PessoaService {
 		return PessoaResponse.builder()
 				.idPessoa(pessoa.getIdPessoa())
 				.build();
+	}
+
+	@Override
+	public List<PessoaListResponse> buscaTodosPessoas() {
+		log.info("[inicia] PessoaApplicationService - buscaTodosPessoas");
+		log.info("[finaliza] PessoaApplicationService - buscaTodosPessoas");
+		return null;
 	}
 }
