@@ -17,7 +17,9 @@ public class PessoaListResponse {
 	private Endereco endereco;
 	
 	public static List<PessoaListResponse> converte(List<Pessoa> pessoas) {
-		return pessoas.stream().map(PessoaListResponse::new).collect(Collectors.toList());
+		return pessoas.stream()
+				.map(PessoaListResponse::new)
+				.collect(Collectors.toList());
 	}
 
 	public PessoaListResponse(Pessoa pessoa) {
