@@ -16,5 +16,4 @@ public class PessoaAlteracaoRequest {
 	private LocalDate dataNascimento;
 	@Embedded
 	private Endereco endereco;
-
 }
