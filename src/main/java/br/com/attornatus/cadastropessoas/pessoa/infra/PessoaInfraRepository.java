@@ -1,5 +1,7 @@
 package br.com.attornatus.cadastropessoas.pessoa.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.attornatus.cadastropessoas.pessoa.application.repository.PessoaRepository;
@@ -19,6 +21,13 @@ public class PessoaInfraRepository implements PessoaRepository {
 		pessoaSpringDataJPARepository.save(pessoa);
 		log.info("[finaliza] PessoaInfraRepository - salva");
 		return pessoa;
+	}
+
+	@Override
+	public List<Pessoa> buscaTodosPessoas() {
+		log.info("[inicia] PessoaInfraRepository - buscaTodosPessoas");
+		log.info("[finaliza] PessoaInfraRepository - buscaTodosPessoas");
+		return null;
 	}
 
 }
