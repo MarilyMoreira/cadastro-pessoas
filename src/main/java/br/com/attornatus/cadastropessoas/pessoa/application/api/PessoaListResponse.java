@@ -3,6 +3,7 @@ package br.com.attornatus.cadastropessoas.pessoa.application.api;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import br.com.attornatus.cadastropessoas.pessoa.domain.Endereco;
 import br.com.attornatus.cadastropessoas.pessoa.domain.Pessoa;
@@ -16,6 +17,13 @@ public class PessoaListResponse {
 	private Endereco endereco;
 	
 	public static List<PessoaListResponse> converte(List<Pessoa> pessoas) {
-		return null;
+		return pessoas.stream().map(PessoaListResponse::new).collect(Collectors.toList());
+	}
+
+	public PessoaListResponse(Pessoa pessoa) {
+		this.idPessoa = pessoa.getIdPessoa();
+		this.nomeCompleto = pessoa.getNomeCompleto();
+		this.dataNascimento = pessoa.getDataNascimento();
+		this.endereco = pessoa.getEndereco();
 	}
 }

@@ -26,8 +26,9 @@ public class PessoaInfraRepository implements PessoaRepository {
 	@Override
 	public List<Pessoa> buscaTodosPessoas() {
 		log.info("[inicia] PessoaInfraRepository - buscaTodosPessoas");
+		List<Pessoa> todasPessoas = pessoaSpringDataJPARepository.findAll();
 		log.info("[finaliza] PessoaInfraRepository - buscaTodosPessoas");
-		return null;
+		return todasPessoas;
 	}
 
 }
