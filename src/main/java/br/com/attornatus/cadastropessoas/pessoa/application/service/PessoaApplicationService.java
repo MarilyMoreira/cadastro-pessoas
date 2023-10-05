@@ -5,12 +5,14 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaAlteracaoRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaDetalhadoResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.repository.PessoaRepository;
 import br.com.attornatus.cadastropessoas.pessoa.domain.Pessoa;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -44,5 +46,15 @@ public class PessoaApplicationService implements PessoaService {
 		Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
 		log.info("[finaliza] PessoaApplicationService - buscaPessoaAtravesId");
 		return new PessoaDetalhadoResponse(pessoa);
+	}
+
+	@Override
+	public void patchEditaPessoa(UUID idPessoa, @Valid PessoaAlteracaoRequest pessoaAlteracaoRequest) {
+		log.info("[inicia] PessoaApplicationService - patchEditaPessoa");
+		Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
+		pessoa.edita(pessoaAlteracaoRequest);
+		pessoaRepository.salva(pessoa);
+		log.info("[finaliza] PessoaApplicationService - patchEditaPessoa");
+		
 	}
 }

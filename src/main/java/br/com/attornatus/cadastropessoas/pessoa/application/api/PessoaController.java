@@ -43,7 +43,9 @@ public class PessoaController implements PessoaAPI {
 
 	@Override
 	public void patchEditaPessoa(UUID idPessoa, @Valid PessoaAlteracaoRequest pessoaAlteracaoRequest) {
-		log.info("[inicia] PessoaController - patchEditaPessoa");		
+		log.info("[inicia] PessoaController - patchEditaPessoa");
+		log.info("[idPessoa] {}", idPessoa);
+		pessoaService.patchEditaPessoa(idPessoa, pessoaAlteracaoRequest);
 		log.info("[finaliza] PessoaController - patchEditaPessoa");		
 	}
 }

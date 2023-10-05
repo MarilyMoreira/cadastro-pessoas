@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaAlteracaoRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -11,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -40,5 +42,13 @@ public class Pessoa {
 		this.dataNascimento = pessoaRequest.getDataNascimento();
 		this.endereco = pessoaRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void edita(@Valid PessoaAlteracaoRequest pessoaAlteracaoRequest) {
+		this.nomeCompleto = pessoaAlteracaoRequest.getNomeCompleto();
+		this.dataNascimento = pessoaAlteracaoRequest.getDataNascimento();
+		this.endereco = pessoaAlteracaoRequest.getEndereco();
+		this.dataHoraDoCadastro = LocalDateTime.now();
+		
 	}
 }
