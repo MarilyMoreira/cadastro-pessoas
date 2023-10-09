@@ -14,4 +14,5 @@ public interface PessoaService {
 	List<PessoaListResponse> buscaTodosPessoas();
 	PessoaDetalhadaResponse buscaPessoaAtravesId(UUID idPessoa);
 	void patchEditaPessoa(UUID idPessoa, @Valid PessoaRequest pessoaRequest);
+	void deletaPessoaAtravesId(UUID idPessoa);
 }

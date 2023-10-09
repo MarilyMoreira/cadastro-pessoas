@@ -56,4 +56,11 @@ public class PessoaApplicationService implements PessoaService {
 		log.info("[finaliza] PessoaApplicationService - patchEditaPessoa");
 		
 	}
+
+	@Override
+	public void deletaPessoaAtravesId(UUID idPessoa) {
+		log.info("[inicia] PessoaApplicationService - deletaPessoaAtravesId");
+		log.info("[finaliza] PessoaApplicationService - deletaPessoaAtravesId");
+		
+	}
 }
