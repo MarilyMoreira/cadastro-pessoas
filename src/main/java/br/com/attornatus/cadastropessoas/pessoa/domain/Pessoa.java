@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaAlteracaoRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -24,14 +23,15 @@ import lombok.NoArgsConstructor;
 public class Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", updatable = false, unique = true, nullable = false)
+	@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idPessoa;
 	@NotBlank
+	@Column(unique = true)
 	private String nomeCompleto;
 	@NotNull
 	private LocalDate dataNascimento;
 	@Embedded
-	private Endereco endereco;
+	private EnderecoPrincipal enderecoPrincipal;
 	
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
@@ -39,15 +39,14 @@ public class Pessoa {
 	public Pessoa(PessoaRequest pessoaRequest) {
 		this.nomeCompleto = pessoaRequest.getNomeCompleto();
 		this.dataNascimento = pessoaRequest.getDataNascimento();
-		this.endereco = pessoaRequest.getEndereco();
+		this.enderecoPrincipal = pessoaRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
-	public void edita(PessoaAlteracaoRequest pessoaAlteracaoRequest) {
-		this.nomeCompleto = pessoaAlteracaoRequest.getNomeCompleto();
-		this.dataNascimento = pessoaAlteracaoRequest.getDataNascimento();
-		this.endereco = pessoaAlteracaoRequest.getEndereco();
+	public void edita(PessoaRequest pessoaRequest) {
+		this.nomeCompleto = pessoaRequest.getNomeCompleto();
+		this.dataNascimento = pessoaRequest.getDataNascimento();
+		this.enderecoPrincipal = pessoaRequest.getEndereco();
 		this.dataHoraDoCadastro = LocalDateTime.now();
-		
 	}
 }

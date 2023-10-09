@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,10 +29,10 @@ public interface PessoaAPI {
 	
 	@GetMapping(value = "/{idPessoa}")
 	@ResponseStatus(code = HttpStatus.OK)
-	PessoaDetalhadoResponse getPessoaAtravesId(@PathVariable UUID idPessoa);
+	PessoaDetalhadaResponse getPessoaAtravesId(@PathVariable UUID idPessoa);
 	
 	@PatchMapping(value = "/{idPessoa}")
-	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	@ResponseStatus(code = HttpStatus.CREATED)
 	void patchEditaPessoa(@PathVariable UUID idPessoa, 
-			@Valid @RequestBody PessoaAlteracaoRequest pessoaAlteracaoRequest);
+			@Valid @RequestBody PessoaRequest pessoaRequest);
 }

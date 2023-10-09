@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @Embeddable
-public class Endereco {
+public class EnderecoPrincipal {
 	private String logradouro;
 	private String CEP;
 	private String numero;

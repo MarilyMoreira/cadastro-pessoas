@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import br.com.attornatus.cadastropessoas.pessoa.domain.Endereco;
+import br.com.attornatus.cadastropessoas.pessoa.domain.EnderecoPrincipal;
 import br.com.attornatus.cadastropessoas.pessoa.domain.Pessoa;
 import lombok.Value;
 
@@ -14,7 +14,7 @@ public class PessoaListResponse {
 	private UUID idPessoa;
 	private String nomeCompleto;
 	private LocalDate dataNascimento;
-	private Endereco endereco;
+	private EnderecoPrincipal enderecoPrincipal;
 	
 	public static List<PessoaListResponse> converte(List<Pessoa> pessoas) {
 		return pessoas.stream()
@@ -26,6 +26,6 @@ public class PessoaListResponse {
 		this.idPessoa = pessoa.getIdPessoa();
 		this.nomeCompleto = pessoa.getNomeCompleto();
 		this.dataNascimento = pessoa.getDataNascimento();
-		this.endereco = pessoa.getEndereco();
+		this.enderecoPrincipal = pessoa.getEnderecoPrincipal();
 	}
 }

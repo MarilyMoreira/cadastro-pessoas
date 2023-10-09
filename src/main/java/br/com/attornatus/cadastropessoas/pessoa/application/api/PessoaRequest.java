@@ -2,7 +2,7 @@ package br.com.attornatus.cadastropessoas.pessoa.application.api;
 
 import java.time.LocalDate;
 
-import br.com.attornatus.cadastropessoas.pessoa.domain.Endereco;
+import br.com.attornatus.cadastropessoas.pessoa.domain.EnderecoPrincipal;
 import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -15,5 +15,5 @@ public class PessoaRequest {
 	@NotNull
 	private LocalDate dataNascimento;
 	@Embedded
-	private Endereco endereco;
+	private EnderecoPrincipal endereco;
 }

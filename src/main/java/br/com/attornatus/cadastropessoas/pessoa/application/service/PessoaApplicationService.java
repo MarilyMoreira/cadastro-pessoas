@@ -5,8 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaAlteracaoRequest;
-import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaDetalhadoResponse;
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaDetalhadaResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaResponse;
@@ -41,18 +40,18 @@ public class PessoaApplicationService implements PessoaService {
 	}
 
 	@Override
-	public PessoaDetalhadoResponse buscaPessoaAtravesId(UUID idPessoa) {
+	public PessoaDetalhadaResponse buscaPessoaAtravesId(UUID idPessoa) {
 		log.info("[inicia] PessoaApplicationService - buscaPessoaAtravesId");
 		Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
 		log.info("[finaliza] PessoaApplicationService - buscaPessoaAtravesId");
-		return new PessoaDetalhadoResponse(pessoa);
+		return new PessoaDetalhadaResponse(pessoa);
 	}
 
 	@Override
-	public void patchEditaPessoa(UUID idPessoa, @Valid PessoaAlteracaoRequest pessoaAlteracaoRequest) {
+	public void patchEditaPessoa(UUID idPessoa, @Valid PessoaRequest pessoaRequest) {
 		log.info("[inicia] PessoaApplicationService - patchEditaPessoa");
 		Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
-		pessoa.edita(pessoaAlteracaoRequest);
+		pessoa.edita(pessoaRequest);
 		pessoaRepository.salva(pessoa);
 		log.info("[finaliza] PessoaApplicationService - patchEditaPessoa");
 		
