@@ -9,4 +9,5 @@ public interface PessoaRepository {
 	Pessoa salva(Pessoa pessoa);
 	List<Pessoa> buscaTodosPessoas();
 	Pessoa buscaPessoaAtravesId(UUID idPessoa);
+	void deleta(Pessoa pessoa);
 }
