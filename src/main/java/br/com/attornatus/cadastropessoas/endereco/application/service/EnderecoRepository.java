@@ -1,4 +1,4 @@
-package br.com.attornatus.cadastropessoas.endereco.application.repository;
+package br.com.attornatus.cadastropessoas.endereco.application.service;
 
 import br.com.attornatus.cadastropessoas.endereco.domain.Endereco;
 
