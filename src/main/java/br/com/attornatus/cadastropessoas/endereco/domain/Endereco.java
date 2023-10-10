@@ -26,5 +26,4 @@ public class Endereco {
 	
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
-	
 }
