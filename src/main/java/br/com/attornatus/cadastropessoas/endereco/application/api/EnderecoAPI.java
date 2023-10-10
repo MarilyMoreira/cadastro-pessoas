@@ -17,5 +17,6 @@ import jakarta.validation.Valid;
 public interface EnderecoAPI {
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	EnderecoResponse postEndereco(@PathVariable UUID idPessoa, @Valid @RequestBody EnderecoRequest enderecoRequest);
+	EnderecoResponse postEndereco(@PathVariable UUID idPessoa, 
+			@Valid @RequestBody EnderecoRequest enderecoRequest);
 }
