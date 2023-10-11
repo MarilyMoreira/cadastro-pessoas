@@ -5,7 +5,7 @@ import java.util.UUID;
 import lombok.Value;
 
 @Value
-public class EnderecoListResponse {
+public class EnderecoPessoaListResponse {
 	private UUID idEndereco;
 	private UUID idPessoa;
 	private String logradouro;
