@@ -24,7 +24,7 @@ public class Endereco {
 	@Column(name = "id", updatable = false, unique = true, nullable = false)
 	private UUID idEndereco;
 	@NotNull
-	@Column(name = "idPessoa", updatable = false, unique = true, nullable = false)
+	@Column(name = "idPessoa", updatable = false)
 	private UUID idPessoa;
 	private String logradouro;
 	private String CEP;
