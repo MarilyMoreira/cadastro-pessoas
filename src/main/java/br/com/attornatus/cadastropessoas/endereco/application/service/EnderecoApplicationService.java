@@ -46,6 +46,6 @@ public class EnderecoApplicationService implements EnderecoService {
 		pessoaService.buscaPessoaAtravesId(idPessoa);
 		Endereco endereco = enderecoRepository.buscaEnderecoAtravesDoId(idEndereco);
 		log.info("[finaliza] EnderecoApplicationService - buscaEnderecoDaPessoaComId");
-		return null;
+		return new EnderecoPessoaDetalhadoResponse(endereco);
 	}
 }
