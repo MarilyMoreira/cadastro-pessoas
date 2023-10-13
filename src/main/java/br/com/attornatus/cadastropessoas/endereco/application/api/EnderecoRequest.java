@@ -5,6 +5,6 @@ import lombok.Value;
 @Value
 public class EnderecoRequest {
 	private String logradouro;
-	private String CEP;
+	private String cep;
 	private String numero;
 }

@@ -27,7 +27,7 @@ public class Endereco {
 	@Column(name = "idPessoa", updatable = false)
 	private UUID idPessoa;
 	private String logradouro;
-	private String CEP;
+	private String cep;
 	private String numero;
 	
 	private LocalDateTime dataHoraDoCadastro;
@@ -36,7 +36,7 @@ public class Endereco {
 	public Endereco(UUID idPessoa, @Valid EnderecoRequest enderecoRequest) {
 		this.idPessoa = idPessoa;
 		this.logradouro = enderecoRequest.getLogradouro();
-		this.CEP = enderecoRequest.getCEP();
+		this.cep = enderecoRequest.getCep();
 		this.numero = enderecoRequest.getNumero();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
