@@ -31,10 +31,12 @@ public class EnderecoApplicationService implements EnderecoService {
 	}
 
 	@Override
-	public List<EnderecoPessoaListResponse> buscaTodosEnderecosDaPessoaComId() {
-		log.info("[inicia] EnderecoApplicationService - buscaTodosEnderecosDaPessoaComId");
-		log.info("[finaliza] EnderecoApplicationService - buscaTodosEnderecosDaPessoaComId");
-		return null;
+	public List<EnderecoPessoaListResponse> buscaEnderecosDaPessoaComId(UUID idPessoa) {
+		log.info("[inicia] EnderecoApplicationService - buscaEnderecosDaPessoaComId");
+		pessoaService.buscaPessoaAtravesId(idPessoa);
+		List<Endereco> enderecosDaPessoa = enderecoRepository.buscaEnderecosDaPessoaAtravesId(idPessoa);
+		log.info("[finaliza] EnderecoApplicationService - buscaEnderecosDaPessoaComId");
+		return EnderecoPessoaListResponse.converte(enderecosDaPessoa);
 	}
 
 }

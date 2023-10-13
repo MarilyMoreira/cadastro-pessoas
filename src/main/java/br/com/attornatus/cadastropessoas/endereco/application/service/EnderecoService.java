@@ -10,5 +10,5 @@ import jakarta.validation.Valid;
 
 public interface EnderecoService {
 	EnderecoResponse criaEndereco(UUID idPessoa, @Valid EnderecoRequest enderecoRequest);
-	List<EnderecoPessoaListResponse> buscaTodosEnderecosDaPessoaComId();
+	List<EnderecoPessoaListResponse> buscaEnderecosDaPessoaComId(UUID idPessoa);
 }
