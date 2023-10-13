@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,10 +25,13 @@ public interface EnderecoAPI {
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List<EnderecoPessoaListResponse> getEnderecosDoClienteComId(@PathVariable UUID idPessoa);
+	List<EnderecoPessoaListResponse> getEnderecosDaPessoaComId(@PathVariable UUID idPessoa);
 	
 	@GetMapping(value = "/{idEndereco}")
 	@ResponseStatus(code = HttpStatus.OK)
-	EnderecoPessoaDetalhadoResponse getEnderecoDoClienteComId(@PathVariable UUID idPessoa, 
-			@PathVariable UUID idEndereco);
+	EnderecoPessoaDetalhadoResponse getEnderecoDaPessoaComId(@PathVariable UUID idPessoa, @PathVariable UUID idEndereco);
+	
+	@DeleteMapping(value = "/{idEndereco}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	void deleteEnderecoDaPessoaComId(@PathVariable UUID idPessoa, @PathVariable UUID idEndereco);
 }

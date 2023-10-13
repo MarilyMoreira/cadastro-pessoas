@@ -26,7 +26,7 @@ public class EnderecoController implements EnderecoAPI {
 	}
 
 	@Override
-	public List<EnderecoPessoaListResponse> getEnderecosDoClienteComId(UUID idPessoa) {
+	public List<EnderecoPessoaListResponse> getEnderecosDaPessoaComId(UUID idPessoa) {
 		log.info("[inicia] EnderecoController - getEnderecosDoClienteComId");
 		log.info("[idPessoa] {}", idPessoa);
 		List<EnderecoPessoaListResponse> enderecosDaPessoa = enderecoService.buscaEnderecosDaPessoaComId(idPessoa);
@@ -35,12 +35,20 @@ public class EnderecoController implements EnderecoAPI {
 	}
 
 	@Override
-	public EnderecoPessoaDetalhadoResponse getEnderecoDoClienteComId(UUID idPessoa, UUID idEndereco) {
-		log.info("[inicia] EnderecoController - getEnderecoDoClienteComId");
+	public EnderecoPessoaDetalhadoResponse getEnderecoDaPessoaComId(UUID idPessoa, UUID idEndereco) {
+		log.info("[inicia] EnderecoController - getEnderecoDaPessoaComId");
 		log.info("[idPessoa] {} - [idEndereco] {}", idPessoa, idEndereco);
 		EnderecoPessoaDetalhadoResponse endereco = enderecoService.buscaEnderecoDaPessoaComId(idPessoa, idEndereco);
-		log.info("[finaliza] EnderecoController - getEnderecoDoClienteComId");
+		log.info("[finaliza] EnderecoController - getEnderecoDaPessoaComId");
 		return endereco;
+	}
+
+	@Override
+	public void deleteEnderecoDaPessoaComId(UUID idPessoa, UUID idEndereco) {
+		log.info("[inicia] EnderecoController - deleteEnderecoDaPessoaComId");
+		log.info("[idPessoa] {} - [idEndereco] {}", idPessoa, idEndereco);
+		log.info("[finaliza] EnderecoController - deleteEnderecoDaPessoaComId");
+		
 	}
 
 }
