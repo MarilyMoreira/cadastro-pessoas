@@ -32,4 +32,11 @@ public class EnderecoInfraRepository implements EnderecoRepository {
 		return enderecos;
 	}
 
+	@Override
+	public Endereco buscaEnderecoAtravesDoId(UUID idEndereco) {
+		log.info("[inicia] EnderecoInfraRepository - buscaEnderecoAtravesDoId");
+		log.info("[finaliza] EnderecoInfraRepository - buscaEnderecoAtravesDoId");
+		return null;
+	}
+
 }

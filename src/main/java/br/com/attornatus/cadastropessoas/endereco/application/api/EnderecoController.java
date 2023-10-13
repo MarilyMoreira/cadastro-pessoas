@@ -37,8 +37,10 @@ public class EnderecoController implements EnderecoAPI {
 	@Override
 	public EnderecoPessoaDetalhadoResponse getEnderecoDoClienteComId(UUID idPessoa, UUID idEndereco) {
 		log.info("[inicia] EnderecoController - getEnderecoDoClienteComId");
+		log.info("[idPessoa] {} - [idEndereco] {}", idPessoa, idEndereco);
+		EnderecoPessoaDetalhadoResponse endereco = enderecoService.buscaEnderecoDaPessoaComId(idPessoa, idEndereco);
 		log.info("[finaliza] EnderecoController - getEnderecoDoClienteComId");
-		return null;
+		return endereco;
 	}
 
 }
