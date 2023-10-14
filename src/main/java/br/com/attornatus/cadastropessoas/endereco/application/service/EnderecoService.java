@@ -3,6 +3,7 @@ package br.com.attornatus.cadastropessoas.endereco.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoAlteracaoRequest;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoPessoaDetalhadoResponse;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoPessoaListResponse;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoRequest;
@@ -14,4 +15,6 @@ public interface EnderecoService {
 	List<EnderecoPessoaListResponse> buscaEnderecosDaPessoaComId(UUID idPessoa);
 	EnderecoPessoaDetalhadoResponse buscaEnderecoDaPessoaComId(UUID idPessoa, UUID idEndereco);
 	void deletaEnderecoDaPessoaAtravesId(UUID idPessoa, UUID idEndereco);
+	void alteraEnderecoDaPessoaComId(UUID idPessoa, UUID idEndereco,
+			@Valid EnderecoAlteracaoRequest enderecoAlteracaoRequest);
 }
