@@ -64,6 +64,9 @@ public class EnderecoApplicationService implements EnderecoService {
 	public void alteraEnderecoDaPessoaComId(UUID idPessoa, UUID idEndereco,
 			@Valid EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
 		log.info("[inicia] EnderecoApplicationService - alteraEnderecoDaPessoaComId");
+		pessoaService.buscaPessoaAtravesId(idPessoa);
+		Endereco endereco = enderecoRepository.buscaEnderecoAtravesDoId(idEndereco);
+		enderecoRepository.alteraEndereco(endereco);
 		log.info("[finaliza] EnderecoApplicationService - alteraEnderecoDaPessoaComId");
 		
 	}
