@@ -9,5 +9,4 @@ import br.com.attornatus.cadastropessoas.endereco.domain.Endereco;
 
 public interface EnderecoSpringDataJPARepository extends JpaRepository<Endereco, UUID>{
 	List<Endereco> findByIdPessoa(UUID idPessoa);
-	void delete(Endereco endereco);
 }

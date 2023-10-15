@@ -50,11 +50,4 @@ public class EnderecoInfraRepository implements EnderecoRepository {
 		log.info("[finaliza] EnderecoInfraRepository - deletaEndereco");
 	}
 
-	@Override
-	public void alteraEndereco(Endereco endereco) {
-		log.info("[inicia] EnderecoInfraRepository - alteraEndereco");
-		log.info("[finaliza] EnderecoInfraRepository - alteraEndereco");
-		
-	}
-
 }

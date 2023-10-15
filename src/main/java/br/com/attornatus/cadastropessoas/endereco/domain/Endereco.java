@@ -3,6 +3,7 @@ package br.com.attornatus.cadastropessoas.endereco.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoAlteracaoRequest;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,5 +40,13 @@ public class Endereco {
 		this.cep = enderecoRequest.getCep();
 		this.numero = enderecoRequest.getNumero();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(EnderecoAlteracaoRequest enderecoRequest) {
+		this.logradouro = enderecoRequest.getLogradouro();
+		this.cep = enderecoRequest.getCep();
+		this.numero = enderecoRequest.getNumero();
+		this.dataHoraDaUltimaAlteracao =  LocalDateTime.now();;
+		
 	}
 }
