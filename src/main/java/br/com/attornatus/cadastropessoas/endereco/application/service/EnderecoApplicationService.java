@@ -11,6 +11,7 @@ import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoPessoa
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoRequest;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoResponse;
 import br.com.attornatus.cadastropessoas.endereco.domain.Endereco;
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.service.PessoaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -37,8 +38,9 @@ public class EnderecoApplicationService implements EnderecoService {
 		log.info("[inicia] EnderecoApplicationService - buscaEnderecosDaPessoaComId");
 		pessoaService.buscaPessoaAtravesId(idPessoa);
 		List<Endereco> enderecosDaPessoa = enderecoRepository.buscaEnderecosDaPessoaAtravesId(idPessoa);
+		List<PessoaListResponse> listarEnderecosPessoa = pessoaService.buscaTodosPessoas();
 		log.info("[finaliza] EnderecoApplicationService - buscaEnderecosDaPessoaComId");
-		return EnderecoPessoaListResponse.converte(enderecosDaPessoa);
+		return EnderecoPessoaListResponse.converte(enderecosDaPessoa, listarEnderecosPessoa);
 	}
 
 	@Override

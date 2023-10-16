@@ -15,5 +15,5 @@ public class PessoaRequest {
 	@NotNull
 	private LocalDate dataNascimento;
 	@Embedded
-	private EnderecoPrincipal endereco;
+	private EnderecoPrincipal enderecoPrincipal;
 }

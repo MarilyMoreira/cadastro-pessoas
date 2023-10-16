@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -39,14 +40,20 @@ public class Pessoa {
 	public Pessoa(PessoaRequest pessoaRequest) {
 		this.nomeCompleto = pessoaRequest.getNomeCompleto();
 		this.dataNascimento = pessoaRequest.getDataNascimento();
-		this.enderecoPrincipal = pessoaRequest.getEndereco();
+		this.enderecoPrincipal = pessoaRequest.getEnderecoPrincipal();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 
 	public void edita(PessoaRequest pessoaRequest) {
 		this.nomeCompleto = pessoaRequest.getNomeCompleto();
 		this.dataNascimento = pessoaRequest.getDataNascimento();
-		this.enderecoPrincipal = pessoaRequest.getEndereco();
+		this.enderecoPrincipal = pessoaRequest.getEnderecoPrincipal();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
+
+	public Pessoa(PessoaListResponse pessoaListResponse) {
+		this.nomeCompleto = pessoaListResponse.getNomeCompleto();
+		this.dataNascimento = pessoaListResponse.getDataNascimento();
+		this.enderecoPrincipal = pessoaListResponse.getEnderecoPrincipal();
+		this.dataHoraDoCadastro = LocalDateTime.now();	}
 }

@@ -2,3 +2,16 @@
 server:
   servlet:
     context-path: /cadastro-pessoas/api
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

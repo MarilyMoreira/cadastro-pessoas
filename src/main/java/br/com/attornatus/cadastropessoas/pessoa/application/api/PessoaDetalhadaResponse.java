@@ -6,9 +6,11 @@ import java.util.UUID;
 
 import br.com.attornatus.cadastropessoas.pessoa.domain.EnderecoPrincipal;
 import br.com.attornatus.cadastropessoas.pessoa.domain.Pessoa;
-import lombok.Value;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Value
+@Getter
+@NoArgsConstructor
 public class PessoaDetalhadaResponse {
 	private UUID idPessoa;
 	private String nomeCompleto;
