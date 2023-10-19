@@ -10,6 +10,7 @@ import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoPessoa
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoPessoaListResponse;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoRequest;
 import br.com.attornatus.cadastropessoas.endereco.application.api.EnderecoResponse;
+import br.com.attornatus.cadastropessoas.endereco.application.repository.EnderecoRepository;
 import br.com.attornatus.cadastropessoas.endereco.domain.Endereco;
 import br.com.attornatus.cadastropessoas.pessoa.application.api.PessoaListResponse;
 import br.com.attornatus.cadastropessoas.pessoa.application.service.PessoaService;

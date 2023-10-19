@@ -32,7 +32,7 @@ public interface PessoaAPI {
 	PessoaDetalhadaResponse getPessoaAtravesId(@PathVariable UUID idPessoa);
 	
 	@PatchMapping(value = "/{idPessoa}")
-	@ResponseStatus(code = HttpStatus.CREATED)
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void patchEditaPessoa(@PathVariable UUID idPessoa, 
 			@Valid @RequestBody PessoaRequest pessoaRequest);
 	

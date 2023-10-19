@@ -1,4 +1,4 @@
-package br.com.attornatus.cadastropessoas.endereco.application.service;
+package br.com.attornatus.cadastropessoas.endereco.application.repository;
 
 import java.util.List;
 import java.util.UUID;

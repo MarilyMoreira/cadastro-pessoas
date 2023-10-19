@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
-import br.com.attornatus.cadastropessoas.endereco.application.service.EnderecoRepository;
+import br.com.attornatus.cadastropessoas.endereco.application.repository.EnderecoRepository;
 import br.com.attornatus.cadastropessoas.endereco.domain.Endereco;
 import br.com.attornatus.cadastropessoas.handler.APIException;
 import lombok.RequiredArgsConstructor;
