@@ -7,7 +7,7 @@ import br.com.attornatus.cadastropessoas.pessoa.domain.Pessoa;
 
 public interface PessoaRepository {
 	Pessoa salva(Pessoa pessoa);
-	List<Pessoa> buscaTodosPessoas();
+	List<Pessoa> buscaTodasPessoas();
 	Pessoa buscaPessoaAtravesId(UUID idPessoa);
 	void deleta(Pessoa pessoa);
 }

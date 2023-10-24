@@ -11,7 +11,7 @@ import jakarta.validation.Valid;
 
 public interface PessoaService {
 	PessoaResponse criaPessoa(PessoaRequest pessoaRequest);
-	List<PessoaListResponse> buscaTodosPessoas();
+	List<PessoaListResponse> buscaTodasPessoas();
 	PessoaDetalhadaResponse buscaPessoaAtravesId(UUID idPessoa);
 	void patchEditaPessoa(UUID idPessoa, @Valid PessoaRequest pessoaRequest);
 	void deletaPessoaAtravesId(UUID idPessoa);
